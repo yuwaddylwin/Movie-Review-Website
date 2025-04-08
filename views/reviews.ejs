@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Movie Reviews</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Movie Reviews</div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/reviews">All Reviews</a>
+            </nav>
+          </div>
+    </header>
+
+    <main class="container">
+        <section class="all-reviews">
+            <h2>All Reviews</h2>
+            
+            <% if (reviews.length === 0) { %>
+                <p class="no-reviews">No reviews yet. Be the first to review a movie!</p>
+            <% } else { %>
+                <div class="reviews-grid">
+                    <% reviews.forEach(review => { %>
+                        <% const movie = movies.find(m => m.id === review.movieId) %>
+                        <div class="review-summary" data-aos="fade-up">
+                            <div class="review-movie">
+                                <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                                <h3><%= movie.title %></h3>
+                            </div>
+                            <div class="review-content">
+                                <div class="review-header">
+                                    <h4><%= review.reviewerName %></h4>
+                                    <div class="stars">
+                                        <% for (let i = 0; i < review.rating; i++) { %>
+                                            <i class="fas fa-star"></i>
+                                        <% } %>
+                                        <% for (let i = review.rating; i < 5; i++) { %>
+                                            <i class="far fa-star"></i>
+                                        <% } %>
+                                    </div>
+                                    <span class="date"><%= review.date %></span>
+                                </div>
+                                <p class="review-text"><%= review.comment %></p>
+                                <a href="/review/<%= movie.id %>" class="btn">View Movie</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Movie Review Website</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> Reviews</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Movie Reviews</div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/reviews">All Reviews</a>
+            </nav>
+          </div>
+    </header>
+
+    <main class="container">
+        <section class="movie-detail">
+            <div class="movie-header">
+                <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                <div>
+                    <h2><%= movie.title %></h2>
+                    <p><span><%= movie.year %></span> • <span><%= movie.director %></span></p>
+                    <p><span><%= movie.description %></span></p>
+                </div>
+            </div>
+
+            <div class="review-form" data-aos="fade-up">
+                <h3>Add Your Review</h3>
+                <form id="reviewForm" action="/submit-review" method="POST">
+                    <input type="hidden" name="movieId" value="<%= movie.id %>">
+                    
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name:</label>
+                        <input type="text" id="reviewerName" name="reviewerName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating:</label>
+                        <div class="rating">
+                            <input type="radio" id="star1" name="rating" value="1" required>
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Your Review:</label>
+                        <textarea id="comment" name="comment" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Review</button>
+                </form>
+            </div>
+
+            <div class="reviews-list">
+                <h3>Reviews</h3>
+                <% if (reviews.length === 0) { %>
+                    <p class="no-reviews">No reviews yet. Be the first to review!</p>
+                <% } else { %>
+                    <% reviews.forEach(review => { %>
+                        <div class="review-card" data-aos="fade-up">
+                            <div class="review-header">
+                                <h4><%= review.reviewerName %></h4>
+                                <div class="stars">
+                                    <% for (let i = 0; i < review.rating; i++) { %>
+                                        <i class="fas fa-star"></i>
+                                    <% } %>
+                                    <% for (let i = review.rating; i < 5; i++) { %>
+                                        <i class="far fa-star"></i>
+                                    <% } %>
+                                </div>
+                                <span class="date"><%= review.date %></span>
+                            </div>
+                            <p><%= review.comment %></p>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Movie Review Website</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

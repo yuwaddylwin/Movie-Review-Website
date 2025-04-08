@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Movie Reviews</div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/reviews">All Reviews</a>
+            </nav>
+          </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+              <h2>Discover and Review Movies</h2>
+              <p>Share your thoughts about your favorite films</p>
+            </div>
+          </section>
+
+        <section class="movie-grid">
+            <h2>Featured Movies</h2>
+            <div class="movies">
+                <% movies.forEach(movie => { %>
+                    <div class="movie-card" data-aos="fade-up">
+                        <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                        <div class="movie-info">
+                            <h3><%= movie.title %></h3>
+                            <p><%= movie.year %> • <%= movie.director %></p>
+                            <a href="/review/<%= movie.id %>" class="btn">View & Review</a>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Movie Review Website</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
