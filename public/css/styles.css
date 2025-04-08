@@ -84,6 +84,24 @@ nav a::after {
 nav a:hover::after {
   width: 100%;
 }
+
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
   /* Hero Section */
   .hero {
     height: 80vh;
