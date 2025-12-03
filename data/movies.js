@@ -1,0 +1,142 @@
+const movies = [
+    { 
+        id: 1, 
+        title: 'When Life Gives You Tangerines', 
+        year: 2025, 
+        director: 'Kim Jin-won', 
+        poster: 'https://newsimg.koreatimes.co.kr/2025/02/05/68520e43-70b7-49ff-a679-88432f533caa.jpg',
+        type: 'Slice-of-Life Drama',
+        description: 'A heartwarming story set in Jeju Island, where a disillusioned city woman rediscovers joy through a tangerine farm and its quirky community. Themes of healing, family bonds, and rural life shine in this underrated gem.',
+    
+    },
+    { 
+        id: 2, 
+        title: 'Stranger Things', 
+        year: 2016, 
+        director: 'The Duffer Brothers', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
+        type: 'TV Series',
+        description: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.'
+    },
+    { 
+        id: 3, 
+        title: 'Alice in Borderland', 
+        year: 2020, 
+        director: 'Shinsuke Sato', 
+        poster: 'https://blog.asianwiki.com/wp-content/uploads/2020/11/Alice_in_Borderland-p1.jpg',
+        type: 'Japanese Drama',
+        description: 'An aimless gamer and his friends find themselves in a parallel Tokyo where they must compete in dangerous games to survive.'
+    },
+    { 
+        id: 4, 
+        title: 'How to Make Millions Before Grandma Dies', 
+        year: 2024, 
+        director: 'Pat Boonnitipat', 
+        poster: 'https://jadwalnonton.com/data/upload/movies/2024/how-to-make-millions-before-grandma-dies-cnp.jpg',
+        type: 'Thai Drama',
+        description: 'A heartwarming story about a young man who returns home to care for his grandmother and discovers family secrets.'
+    },
+    { 
+        id: 5, 
+        title: 'Spirited Away', 
+        year: 2001, 
+        director: 'Hayao Miyazaki', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
+        type: 'Anime',
+        description: 'During her family\'s move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits.'
+    },
+    { 
+        id: 6, 
+        title: 'Squid Game', 
+        year: 2021, 
+        director: 'Hwang Dong-hyuk', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BYWE3MDVkN2EtNjQ5MS00ZDQ4LTliNzYtMjc2YWMzMDEwMTA3XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg',
+        type: 'Korean Drama',
+        description: 'Hundreds of cash-strapped players accept a strange invitation to compete in children\'s games with deadly high stakes.'
+    },
+    { 
+        id: 7, 
+        title: 'Start-Up', 
+        year: 2020, 
+        director: 'Oh Choong-hwan', 
+        poster: 'https://asianwiki.com/images/d/d9/Start-Up-CP1.jpg',
+        type: 'Korean Drama',
+        description: 'Young entrepreneurs compete in South Korea\'s competitive tech start-up world.'
+    },
+    {
+        id: 8,
+        title: 'The Pursuit of Happyness',
+        year: 2006,
+        director: 'Gabriele Muccino',
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTQ5NjQ0NDI3NF5BMl5BanBnXkFtZTcwNDI0MjEzMw@@._V1_.jpg',
+        type: 'Biographical Drama',
+        description: 'A struggling salesman takes custody of his son while pursuing an unpaid internship at a prestigious stock brokerage firm, facing homelessness in his quest for a better life. Based on the true story of Chris Gardner.',
+    },
+    { 
+        id: 9, 
+        title: 'Divergent', 
+        year: 2014, 
+        director: 'Neil Burger', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BMTYxMzYwODE4OV5BMl5BanBnXkFtZTgwNDE5MzE2MDE@._V1_.jpg',
+        type: 'Sci-Fi',
+        description: 'In a dystopian Chicago, society is divided into five factions based on personalities; a girl discovers she doesn\'t fit in.'
+    },
+    { 
+        id: 10, 
+        title: 'Everything Everywhere All at Once', 
+        year: 2022, 
+        director: 'Daniel Kwan, Daniel Scheinert', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_.jpg',
+        type: 'Sci-Fi/Comedy',
+        description: 'A middle-aged Chinese immigrant is swept up into an insane adventure where she must connect different versions of herself.'
+    },
+    { 
+        id: 11, 
+        title: 'Thicha', 
+        year: 2019, 
+        director: 'Piyapan Choopetch', 
+        poster: 'https://m.media-amazon.com/images/M/MV5BZTJhMTc3YzEtZjZhYi00ZDA3LWI1Y2YtNWU1N2Q2MDAzNWRkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+        type: 'Thai Horror',
+        description: 'A chilling Thai horror film about a nanny who may not be what she seems, with dark secrets from the past.'
+    },
+    {
+        id: 12, 
+        title: 'Bird Box Barcelona', 
+        year: 2023, 
+        director: 'Álex and David Pastor', 
+        poster: 'https://s3.amazonaws.com/static.rogerebert.com/uploads/movie/movie_poster/bird-box-barcelona-2023/large_bird-box-barcelona-movie-poster-2023.jpeg',
+        type: 'Horror/Thriller',
+        description: 'A spin-off of "Bird Box," set in Barcelona where creatures drive people to suicide.'
+    },
+    { id: 13, title: "The Sandman", year: 2022, director: "Neil Gaiman", poster: "https://image.tmdb.org/t/p/w500/q54qEgagGOYCq5D1903eBVMNkbo.jpg", type: "Fantasy", description: "The Lord of Dreams escapes captivity and rebuilds his realm." },
+    { id: 14, title: "Arcane", year: 2021, director: "Pascal Charrue", poster: "https://image.tmdb.org/t/p/w500/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg", type: "Animated Series", description: "Rival cities clash with science and magic." },
+    { id: 15, title: "The Umbrella Academy", year: 2019, director: "Steve Blackman", poster: "https://image.tmdb.org/t/p/w500/scZlQQYnDVlnpxFTxaIv2g0BWnL.jpg", type: "Superhero", description: "Dysfunctional heroes stop the apocalypse." },
+    { id: 16, title: "Army of the Dead", year: 2021, director: "Zack Snyder", poster: "https://image.tmdb.org/t/p/w500/z8CExJekGrEThbpMXAmCFvvgoJR.jpg", type: "Action Horror", description: "Mercenaries rob a zombie-infested Las Vegas." },
+    { id: 17, title: "The Platform", year: 2019, director: "Galder Gaztelu-Urrutia", poster: "https://image.tmdb.org/t/p/w500/8ZX18L5m6rH5viSYpRnTSbb9eXh.jpg", type: "Sci-Fi Thriller", description: "A vertical prison tests human morality." },
+    { id: 18, title: "Glass Onion", year: 2022, director: "Rian Johnson", poster: "https://image.tmdb.org/t/p/w500/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg", type: "Mystery", description: "Detective Benoit Blanc solves another murder." },
+    { id: 19, title: "The Gray Man", year: 2022, director: "Russo Brothers", poster: "https://image.tmdb.org/t/p/w500/8cXbitsS6dWQ5gfMTZdorpAAzEH.jpg", type: "Action Thriller", description: "A CIA agent goes rogue." },
+    { id: 20, title: "Wednesday", year: 2022, director: "Tim Burton", poster: "https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg", type: "Comedy Horror", description: "Wednesday Addams navigates a supernatural school." },
+    { id: 21, title: "House of the Dragon", year: 2022, director: "Ryan Condal", poster: "https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg", type: "Fantasy Drama", description: "The Targaryen civil war for the Iron Throne." },
+    { id: 22, title: "The Last of Us", year: 2023, director: "Craig Mazin", poster: "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg", type: "Post-Apocalyptic", description: "A smuggler escorts a girl across zombie-infested America." },
+    { id: 23, title: "Friends", year: 1994, director: "David Crane", poster: "https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg", type: "Sitcom", description: "Six friends navigate life and love in New York." },
+    { id: 24, title: "The Office", year: 2005, director: "Greg Daniels", poster: "https://image.tmdb.org/t/p/w500/qWnJzyZhyy74gjpSjIXWmuk0ifX.jpg", type: "Mockumentary", description: "The daily lives of office employees." },
+    { id: 25, title: "Game of Thrones", year: 2011, director: "David Benioff", poster: "https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg", type: "Fantasy Epic", description: "Noble families fight for the Iron Throne." },
+    { id: 26, title: "The Walking Dead", year: 2010, director: "Frank Darabont", poster: "https://image.tmdb.org/t/p/w500/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg", type: "Zombie Apocalypse", description: "Survivors navigate a world overrun by zombies." },
+    { id: 27, title: "Better Call Saul", year: 2015, director: "Vince Gilligan", poster: "https://image.tmdb.org/t/p/w500/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg", type: "Crime Drama", description: "The transformation of Jimmy McGill into Saul Goodman." },
+    { id: 28, title: "Chernobyl", year: 2019, director: "Craig Mazin", poster: "https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg", type: "Historical Drama", description: "The true story of the Chernobyl nuclear disaster." },
+    { id: 29, title: "The Big Bang Theory", year: 2007, director: "Chuck Lorre", poster: "https://image.tmdb.org/t/p/w500/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg", type: "Sitcom", description: "Friendship and romance among science geeks." },
+    { id: 30, title: "Vikings", year: 2013, director: "Michael Hirst", poster: "https://image.tmdb.org/t/p/w500/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg", type: "Historical Drama", description: "Viking raider Ragnar Lothbrok's adventures." },
+    { id: 31, title: "Sherlock", year: 2010, director: "Steven Moffat", poster: "https://image.tmdb.org/t/p/w500/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg", type: "Crime Mystery", description: "Modern adaptation of Sherlock Holmes." },
+    { id: 32, title: "Westworld", year: 2016, director: "Jonathan Nolan", poster: "https://image.tmdb.org/t/p/w500/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg", type: "Sci-Fi Western", description: "AI hosts gain consciousness in a theme park." },
+    { id: 33, title: "The Falcon and the Winter Soldier", year: 2021, director: "Malcolm Spellman", poster: "https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg", type: "Superhero", description: "Sam Wilson and Bucky Barnes team up on a global adventure." },
+    { id: 34, title: "WandaVision", year: 2021, director: "Jac Schaeffer", poster: "https://image.tmdb.org/t/p/w500/glKDfE6btIRcVB5zrjspRIs4r52.jpg", type: "Superhero Drama", description: "Wanda and Vision live an idealized suburban life." },
+    { id: 35, title: "Loki", year: 2021, director: "Michael Waldron", poster: "https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg", type: "Fantasy Adventure", description: "Loki navigates the multiverse after the Battle of New York." },
+    { id: 36, title: "Moon Knight", year: 2022, director: "Jeremy Slater", poster: "https://image.tmdb.org/t/p/w500/x6FsYvt33846IQnDSFxla9j0RX8.jpg", type: "Superhero Fantasy", description: "A mercenary with dissociative identity disorder." },
+    { id: 37, title: "The Book of Boba Fett", year: 2021, director: "Jon Favreau", poster: "https://image.tmdb.org/t/p/w500/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg", type: "Space Western", description: "Boba Fett establishes his criminal empire on Tatooine." },
+    { id: 38, title: "Obi-Wan Kenobi", year: 2022, director: "Deborah Chow", poster: "https://image.tmdb.org/t/p/w500/qJRB789ceLryrLvOKrZqLKr2CGf.jpg", type: "Sci-Fi Adventure", description: "Obi-Wan watches over young Luke Skywalker on Tatooine." },
+    { id: 39, title: "The Batman", year: 2022, director: "Matt Reeves", poster: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg", type: "Superhero Crime", description: "Batman uncovers corruption in Gotham City." },
+    { id: 40, title: "Dune", year: 2021, director: "Denis Villeneuve", poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg", type: "Sci-Fi Epic", description: "A noble family becomes embroiled in a war for a desert planet." },
+    { id: 41, title: "Top Gun: Maverick", year: 2022, director: "Joseph Kosinski", poster: "https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg", type: "Action Drama", description: "After 30 years, Maverick trains a detachment of graduates." },
+    { id: 42, title: "Everything Everywhere All at Once", year: 2022, director: "The Daniels", poster: "https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg", type: "Sci-Fi Adventure", description: "An aging Chinese immigrant is swept up in an insane adventure." }
+    ]
+module.exports = movies;

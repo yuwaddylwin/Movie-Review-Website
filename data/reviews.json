@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "movieId": 2,
+    "reviewerName": "Yu Waddy Lwin",
+    "rating": 5,
+    "comment": "My fav of all time. ",
+    "date": "12/3/2025"
+  },
+  {
+    "id": 2,
+    "movieId": 4,
+    "reviewerName": "Yu Waddy Lwin",
+    "rating": 5,
+    "comment": "A good movie. After watching it, I cried :(((",
+    "date": "12/3/2025"
+  }
+]
