@@ -7,7 +7,7 @@ A dynamic movie review platform that allows users to submit and browse movie rev
 ---
 
 ## 📸 Website Screenshots
-
+![image](https://github.com/yuwaddylwin/Movie-Review-Website/blob/bd14c80a0f3465115231e3818d480db391c0b6f0/Movie%20Review.jpg)
 ---
 
 ## 📌 Overview
